@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片详情</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/details.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+</head>
+<body>
+    <h1>
+    <!--nav存放logo,主页,浏览页,搜索页-->
+    <nav id="navs">
+        <!--logo导向主页-->
+        <a href="Home.html" id="logo"><image width="53" height="53" src="../images/logo.jpeg"></image></a>
+        <!--navigation类用于内联布局,jump类存放超链接实现跳转-->
+        <div class="navigation">
+            <div class="jump" id="home">
+                <a href="Home.html">主页</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="jump" id="browse">
+                <a href="Browse.html">浏览</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="jump" id="search">
+                <a href="Search.html">搜索</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="account">
+                <span class="accountText">我的</span>
+                <!--account_wrap在CSS中设置为默认隐藏,列表布局-->
+                <div class="account_wrap">
+                    <ul>
+                        <li><a href="../index.html"><image width="15" height="15" src="../images/loginLogo.jpeg"></image>&nbsp;登录</a></li>
+                        <li><a href="Upload.html"><image width="15" height="15" src="../images/uploadLogo.jpeg"></image>&nbsp;上传</a></li>
+                        <li><a href="Depository.html"><image width="15" height="15" src="../images/depositoryLogo.jpeg"></image>&nbsp;库</a></li>
+                        <li><a href="Favor.html"><image width="15" height="15" src="../images/favorLogo.jpeg"></image>&nbsp;收藏</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</h1>
+    <section class="mainSection">
+        <p class="headText">图片详情</p>
+        <h2>山清水秀&nbsp;&nbsp;<span class="photographer">by bth</span></h2>
+        <img src="../images/detailsImg.jpg" class="detailsImg">
+        <!--将收藏量,摘要信息,收藏按钮放在同一个div下便于布局-->
+        <div class="informationSection">
+            <div class="favorNumberSection">
+                <p class="headText">收藏数量</p>
+                <p class="favorNumber">99</p>
+            </div>
+            <div class="imageDetails">
+                <p class="headText">图片信息</p>
+                <p class="filter">主题：风景</p>
+                <p class="filter">国家：中国</p>
+                <p class="filter">城市：上海</p>
+            </div>
+            <input type="button" id="favorBtn" onclick="alert('已收藏')" value="收藏">
+        </div>
+        <div class="descriptionSection">
+                Welcome to my photo website. This is the details of this photo.Welcome to my photo website. This is the details of this photo.Welcome to my photo website. This is the details of this photo.Welcome to my photo website. This is the details of this photo.Welcome to my photo website. This is the details of this photo.
+        </div>
+    </section>
+</body>
+<footer>
+    <span class="copyrightText">©2020&nbsp;19302010001_BaiTianHao All Rights Reserved.&nbsp;备案号：沪GOULIGUOJIA备341号-1</span>
+</footer>
+</html>

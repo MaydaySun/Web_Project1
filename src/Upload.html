@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>上传</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="../css/upload.css">
+</head>
+<body>
+    <h1>
+    <!--nav存放logo,主页,浏览页,搜索页-->
+    <nav id="navs">
+        <!--logo导向主页-->
+        <a href="Home.html" id="logo"><image width="53" height="53" src="../images/logo.jpeg"></image></a>
+        <!--navigation类用于内联布局,jump类存放超链接实现跳转-->
+        <div class="navigation">
+            <div class="jump" id="home">
+                <a href="Home.html">主页</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="jump" id="browse">
+                <a href="Browse.html">浏览</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="jump" id="search">
+                <a href="Search.html">搜索</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="account">
+                <span class="accountText">我的</span>
+                <!--account_wrap在CSS中设置为默认隐藏,列表布局-->
+                <div class="account_wrap">
+                    <ul>
+                        <li><a href="../index.html"><image width="15" height="15" src="../images/loginLogo.jpeg"></image>&nbsp;登录</a></li>
+                        <li><a href="Upload.html"><image width="15" height="15" src="../images/uploadLogo.jpeg"></image>&nbsp;上传</a></li>
+                        <li><a href="Depository.html"><image width="15" height="15" src="../images/depositoryLogo.jpeg"></image>&nbsp;库</a></li>
+                        <li><a href="Favor.html"><image width="15" height="15" src="../images/favorLogo.jpeg"></image>&nbsp;收藏</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</h1>
+    <section class="mainSection">
+        <p class="headText">上传图片</p>
+        <form name="uploadImageForm" id="uploadImageForm" method="get" action="Depository.html" onsubmit="alert('已提交')">
+            <div class="uploadImage">
+                <div class="imageArea">
+                    <img id="uploadedImage">
+                    <div id="noImageText">图片未上传</div>
+                </div>
+                <label id="upload">
+                    <input type="button" id="uploadBtn"  value="现在上传">
+                    <input type="file" id="file" onchange="changepic(this)" accept="image/jpg,image/jpeg,image/png,image/PNG" required>
+                </label>
+            </div>
+            <h4>图片标题：</h4>
+            <input type="text" name="imageTitle" id="imageTitle" autocomplete="off" required>
+            <h4>图片描述：</h4>
+            <textarea name="imageDescription" id="imageDescription" autocomplete="off" required></textarea>
+            <h4>拍摄国家：</h4>
+            <input type="text" name="imageCountry" id="imageCountry" autocomplete="off">
+            <h4>拍摄城市：</h4>
+            <input type="text" name="imageCity" id="imageCity" autocomplete="off"><br>
+            <input type="submit" name="submit">
+        </form>
+    </section>
+    <script>
+        //如果file按钮选中了一个图片,将它的src传给img组件作为图片src,然后将无图片提示 noImageText 隐藏
+        function changepic() {
+            var reads = new FileReader();
+            f = document.getElementById('file').files[0];
+            reads.readAsDataURL(f);
+            reads.onload = function(e) {
+                document.getElementById('uploadedImage').src = this.result;
+                document.getElementById('noImageText').hidden = true;
+            };
+        }
+    </script>
+</body>
+<footer>
+    <span class="copyrightText">©2020&nbsp;19302010001_BaiTianHao All Rights Reserved.&nbsp;备案号：沪GOULIGUOJIA备341号-1</span>
+</footer>
+</html>

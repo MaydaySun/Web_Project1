@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/browse.css">
+    <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+</head>
+<body>
+    <h1>
+    <!--nav存放logo,主页,浏览页,搜索页-->
+    <nav id="navs">
+        <!--logo导向主页-->
+        <a href="Home.html" id="logo"><image width="53" height="53" src="../images/logo.jpeg"></image></a>
+        <!--navigation类用于内联布局,jump类存放超链接实现跳转-->
+        <div class="navigation">
+            <div class="jump" id="home">
+                <a href="Home.html">主页</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="jump" id="browse">
+                <a href="Browse.html">浏览</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="jump" id="search">
+                <a href="Search.html">搜索</a>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="account">
+                <span class="accountText">我的</span>
+                <!--account_wrap在CSS中设置为默认隐藏,列表布局-->
+                <div class="account_wrap">
+                    <ul>
+                        <li><a href="../index.html"><image width="15" height="15" src="../images/loginLogo.jpeg"></image>&nbsp;登录</a></li>
+                        <li><a href="Upload.html"><image width="15" height="15" src="../images/uploadLogo.jpeg"></image>&nbsp;上传</a></li>
+                        <li><a href="Depository.html"><image width="15" height="15" src="../images/depositoryLogo.jpeg"></image>&nbsp;库</a></li>
+                        <li><a href="Favor.html"><image width="15" height="15" src="../images/favorLogo.jpeg"></image>&nbsp;收藏</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</h1>
+    <!--边栏包含标题搜索,热门筛选(同为hotFilter类)-->
+    <aside class="hotFilterSection">
+        <!--标题检索类,包含输入框与搜索按钮-->
+        <div class="hotFilter" id="searchByTitle">
+            <p>标题检索</p>
+            <input class="hotFilter" id="searchInput" type="text" autocomplete="off">
+            <input type="button" id="searchBtn" onclick="alert('已获取搜索结果')">
+        </div>
+        <!--热门筛选类,用列表列出多个含超链接的p元素-->
+        <div class="hotFilter" id="hotContent">
+            <p>热门内容</p>
+            <ul class="hotContents">
+                <li><a href="Browse.html">风景</a></li>
+                <li><a href="Browse.html">都市</a></li>
+                <li><a href="Browse.html">人物</a></li>
+                <li><a href="Browse.html">动物</a></li>
+                <li><a href="Browse.html">建筑</a></li>
+                <li><a href="Browse.html">奇观</a></li>
+            </ul>
+        </div>
+        <div class="hotFilter" id="hotCountry">
+            <ul class="hotCountries">
+                <p>热门国家</p>
+                <li><a href="Browse.html">中国</a></li>
+                <li><a href="Browse.html">意大利</a></li>
+                <li><a href="Browse.html">日本</a></li>
+                <li><a href="Browse.html">美国</a></li>
+            </ul>
+        </div>
+        <div class="hotFilter" id="hotCity">
+            <ul class="hotCities">
+                <p>热门城市</p>
+                <li><a href="Browse.html">上海</a></li>
+                <li><a href="Browse.html">东京</a></li>
+                <li><a href="Browse.html">威尼斯</a></li>
+                <li><a href="Browse.html">纽约</a></li>
+            </ul>
+        </div>
+    </aside>
+    <!--section包含筛选选项与筛选结果-->
+    <section class="filterSection">
+        <p>查看结果</p>
+        <!--选择筛选方式的div,与move()绑定onchange,实现由第一个选择值的改变确定第二个选择的展示-->
+        <div class="filters">
+            <select class="filter" id="filterByCountry" onchange="changeSelect()">
+                <option value="" disabled selected hidden>选择国家</option>
+                <option value="China">中国</option>
+                <option value="Italy">意大利</option>
+                <option value="Japan">日本</option>
+                <option value="America">美国</option>
+            </select>
+            <select class="filter" id="filterByCity">
+                <option value="" disabled selected hidden>选择城市</option>
+                <option value="Shanghai">上海</option>
+                <option value="Kunming">昆明</option>
+                <option value="Beijing">北京</option>
+                <option value="Yantai">烟台</option>
+                <option value="Roma">罗马</option>
+                <option value="Milan">米兰</option>
+                <option value="Venice">威尼斯</option>
+                <option value="Florence">佛罗伦萨</option>
+                <option value="Tokyo">东京</option>
+                <option value="Osaka">大阪</option>
+                <option value="Kamakura">镰仓</option>
+                <option value="New York">纽约</option>
+                <option value="San Francisco">旧金山</option>
+                <option value="Washington">华盛顿</option>
+            </select>
+            <button id="filterBtn" onclick="alert('结果已筛选')">筛选</button>
+        </div>
+        <!--展示筛选结果，有一堆含图片的超链接-->
+        <div class="resultSection">
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs1.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs2.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs3.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs4.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs5.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs6.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs7.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs8.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs9.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs10.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs11.jpg" class="resultImage"></image></a>
+            <a href="Details.html" class="resultImgArea"><image src="../images/rs12.jpg" class="resultImage"></image></a>
+        </div>
+            <!--展示页码-->
+            <div class="pagefooter">
+                《&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;》
+            </div>
+    </section>
+    <script>
+        function changeSelect() {
+            var filterByCountry = document.getElementById("filterByCountry");
+            var filterByCity = document.getElementById("filterByCity");
+            var add;
+            if (filterByCountry.value == "China") {
+                add = new Array("上海","昆明","北京","烟台");
+            } else if (filterByCountry.value == "Italy") {
+                add = new Array("罗马","米兰","威尼斯","佛罗伦萨");
+            } else if (filterByCountry.value == "Japan") {
+                add = new Array("东京","大阪","镰仓");
+            } else if (filterByCountry.value == "America") {
+                add = new Array("纽约","旧金山","华盛顿");
+            }
+            else {
+                add = null;
+            }
+            filterByCity.length = 0;
+            for (var i = 0; i < add.length; i++) {
+                var aaa = new Option();
+                aaa.text = add[i].split()[0];
+                filterByCity.add(aaa);
+            }
+        }
+    </script>
+</body>
+<footer>
+    <span class="copyrightText">©2020&nbsp;19302010001_BaiTianHao All Rights Reserved.&nbsp;备案号：沪GOULIGUOJIA备341号-1</span>
+</footer>
+</html>
