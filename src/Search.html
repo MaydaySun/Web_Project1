@@ -9,41 +9,38 @@
 </head>
 <body>
     <h1>
-    <!--nav存放logo,主页,浏览页,搜索页-->
-    <nav id="navs">
-        <!--logo导向主页-->
-        <a href="Home.html" id="logo"><image width="53" height="53" src="../images/logo.jpeg"></image></a>
-        <!--navigation类用于内联布局,jump类存放超链接实现跳转-->
-        <div class="navigation">
-            <div class="jump" id="home">
-                <a href="Home.html">主页</a>
+    <!--logo导向主页-->
+    <a href="Home.html" id="logo"><img width="53" height="53" src="../images/logo.jpeg" alt="logo"></a>
+    <!--navigation类用于内联布局,jump类存放超链接实现跳转-->
+    <div class="navigation">
+        <div class="jump" id="home">
+            <a href="Home.html">主页</a>
+        </div>
+    </div>
+    <div class="navigation">
+        <div class="jump" id="browse">
+            <a href="Browse.html">浏览</a>
+        </div>
+    </div>
+    <div class="navigation">
+        <div class="jump" id="search">
+            <a href="Search.html">搜索</a>
+        </div>
+    </div>
+    <div class="navigation">
+        <div class="account">
+            <span class="accountText">我的</span>
+            <!--account_wrap在CSS中设置为默认隐藏,列表布局-->
+            <div class="account_wrap">
+                <ul>
+                    <li><a href="../index.html"><img width="15" height="15" src="../images/loginLogo.jpeg" alt="登录">&nbsp;登录</a></li>
+                    <li><a href="Upload.html"><img width="15" height="15" src="../images/uploadLogo.jpeg" alt="上传">&nbsp;上传</a></li>
+                    <li><a href="Depository.html"><img width="15" height="15" src="../images/depositoryLogo.jpeg" alt="库">&nbsp;库</a></li>
+                    <li><a href="Favor.html"><img width="15" height="15" src="../images/favorLogo.jpeg" alt="收藏">&nbsp;收藏</a></li>
+                </ul>
             </div>
         </div>
-        <div class="navigation">
-            <div class="jump" id="browse">
-                <a href="Browse.html">浏览</a>
-            </div>
-        </div>
-        <div class="navigation">
-            <div class="jump" id="search">
-                <a href="Search.html">搜索</a>
-            </div>
-        </div>
-        <div class="navigation">
-            <div class="account">
-                <span class="accountText">我的</span>
-                <!--account_wrap在CSS中设置为默认隐藏,列表布局-->
-                <div class="account_wrap">
-                    <ul>
-                        <li><a href="../index.html"><image width="15" height="15" src="../images/loginLogo.jpeg"></image>&nbsp;登录</a></li>
-                        <li><a href="Upload.html"><image width="15" height="15" src="../images/uploadLogo.jpeg"></image>&nbsp;上传</a></li>
-                        <li><a href="Depository.html"><image width="15" height="15" src="../images/depositoryLogo.jpeg"></image>&nbsp;库</a></li>
-                        <li><a href="Favor.html"><image width="15" height="15" src="../images/favorLogo.jpeg"></image>&nbsp;收藏</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    </div>
 </h1>
     <!--搜索栏-->
     <div class="searchSection">
